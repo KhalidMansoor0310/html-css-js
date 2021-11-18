@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    <div id="myDIV"><p>Khalid</p><span>Mansoor</span></div>
+        <!-- ------------------------------------? -->
+    <h1 id="head">Hello, world!</h1>
+    <div class="card" id="card" style="width: 18rem;">
+        <div class="card-body" id="cardBody">
+          <input type="text" id="input" placeholder="search here...." onkeyup="filter()">
+
+          <h5 class="card-title">Card title</h5>
+          <input type="text" id="input-value">
+          
+
+          <button id="submit" onclick="addItems()">Add</button>
+          <ul class="list-group" id="items">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script>
+
+
+
+// Whitespace inside elements is considered as text,
+//  and text is considered as nodes (See "More Examples")
+// -----------------------------------------------------------
+           //parentNode
+        //    The parent node property is read only property which returns us the name of the 
+        //    parent node of the selected node as a node object. The Node object represents a single node in the document 
+        //    tree and a node can be an element node, text node or more.
+        //    var itemList = document.querySelector('#items').parentNode;
+        //    console.log(itemList);
+        //    console.log(itemList.parentNode.firstChild)
+        //     console.log(itemList.parentNode.parentNode.parentNode);
+        //     itemList.parentNode.parentNode.parentNode.style.background.color = '#f4f4f4';
+           
+        
+        //parentElement
+        //    The parent element is read only property which returns the parent element of the selected element.
+        //    The element object represents an HTML element, like P, DIV, etc.
+            // var text = document.getElementById('items').parentElement.nodeName;
+            // console.log(text)
+           //childNodes
+        //    element.childNodes[0] will produce the same result as the firstChild property.
+        //    var text = document.getElementById('items').childNodes.length;
+        // //    accessing node child Element
+        // //    var text1 = document.getElementById('items').childNodes[0];
+        //    console.log(text)
+        //    //childern
+        //    var collect = document.getElementById('items').children;
+        //    collect[1].style.color = "Red";
+        //    collect[1].innerHTML = "<h3>Khalid mansoor</h3>";
+        //    console.log(collect)
+        //    //firstChild
+
+        //    var x = document.getElementById("cardBody").firstChild;
+        //    console.log(x);
+
+        //    var y = document.getElementById('myDIV').firstChild.nodeName;
+        //    document.getElementById("head").innerHTML = y;
+
+
+           
+           
+
+        //    //firstElementChild
+        //    var z = document.getElementById('items').firstElementChild;
+        //    z.innerHTML = "<h3>Aqib Khan</h3>";
+        //    z.style.color = "red";
+           //lastChild
+        //    var x = document.getElementById("items").lastChild;
+        //    x.innerText = "Hello baby"
+        //    console.log(x);
+           //lastElementChild
+        //    var y = document.getElementById("items").lastElementChild;
+        //     console.log(y)
+
+            //nextSibling
+            // var y = document.getElementsByClassName("list-group-item").nextSibling;
+            // console.log(y)
+            //nextElementSibling
+            // previousSibling
+            //previousElementSibling
+
+
+            // createElement
+            // createTextNode
+            // appendChild
+            // var element = document.createElement('div');
+            // element.className = "test-div";
+            // element.id = "test-id";
+            // element.setAttribute("title","khalid")
+            // // element.innerText = "khalid mansoor";
+
+            // var newElem = document.createTextNode("My name is musalman");
+            // element.appendChild(newElem);
+            
+            // console.log(element)
+
+            // var body = document.querySelector(".card .card-body");
+            // var cardtitle = document.querySelector(".card-body .card-title")
+            // body.insertBefore(element,cardtitle)
+            // console.log(body)
+    function addItems(){
+      var ul = document.getElementById('items');
+      var text = document.getElementById('input-value').value;
+
+      var li = document.createElement('li');
+      li.className = "list-group-item";
+      li.appendChild(document.createTextNode(text));
+
+      deletebtn = document.createElement('button');
+      deletebtn.className = 'btn btn-danger';
+      deletebtn.appendChild(document.createTextNode("X"));
+      deletebtn.id = "delete";
+      li.appendChild(deletebtn);
+     
+
+      ul.appendChild(li);
+
+      var btn = document.getElementById('delete');
+      btn.addEventListener('click',(e)=>{
+          var li = e.target.parentElement;
+          ul.removeChild(li);
+      })
+
+
+
+    }
+        function filter(){
+          var filter = document.getElementById('input').value.toLowerCase();
+          var itemList = document.getElementById('items');
+          var items  = itemList.getElementsByTagName('li');
+          Array.from(items).forEach(function(item){
+          var itemName = item.firstChild.textContent;
+          if(itemName.toLowerCase().indexOf(filter) != -1){
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        }
+
+    </script>
+    
+  </body>
+</html>

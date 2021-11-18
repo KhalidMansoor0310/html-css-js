@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1 id="head">Hello, world!</h1>
+    <div class="card" id="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script>
+            
+            console.log(document.all);
+            console.log(document.location)
+            console.log(document.URL)
+            console.log(document.body)
+            console.log(document.head)
+            console.log(document.links)
+            var h1 = document.getElementById("head");
+            // h1.textContent = "Wellcome";
+            // h1.innerText = "Good Bye Man";
+            h1.innerHTML = "<b>Login Area</b>"
+            h1.style.color = "red";
+            h1.style.borderBottom = "2px solid #ccc";
+            h1.style.padding = "20px";
+            var cardtitle = document.getElementsByClassName("card-title");
+            cardtitle.innerHTML = "<h2>Login Form</h2>";
+            
+            
+
+
+            var list = document.getElementsByClassName('list-group-item');
+            console.log(list[0].style.color = "red")
+
+            // what if we want all to be red atonce 
+
+            for(var itm = 0; itm<list.length; itm++){
+                list[itm].style.color="green";
+                list[itm].innerText = "Learn Python";
+                list[itm].style.margin= "1rem";
+
+            }
+
+           var btn =  document.querySelector(".btn").textContent;
+            console.log(btn)
+
+            var buton = document.querySelector(".btn");
+            buton.style.padding = "10px";
+            buton.style.margin = "10px";
+
+            var cardTotal = document.getElementById("card");
+            cardTotal.style.width = "80%";
+            console.log(cardTotal)
+
+            var title = document.getElementsByClassName('card-title');
+            console.log(title)
+            title.textContent = "Wellcome To ICP";
+
+    </script>
+    
+  </body>
+</html>

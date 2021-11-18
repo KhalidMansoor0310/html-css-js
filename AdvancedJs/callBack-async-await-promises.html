@@ -1,0 +1,47 @@
+<script> 
+    let obj = [
+    {
+        title:"My name is khalid mansoor",
+        age:25,
+        program:"BSSE"
+    },
+    {
+        title:"My name is Aqib khan",
+        age:27,
+        program:"BSSE"
+    },
+    {
+        title:"My name is salman khan",
+        age:87,
+        program:"BSSE"
+    }
+];
+
+function getdata(){
+    setTimeout(()=>{
+        let htmldata = '';
+        obj.forEach((element)=>{
+            htmldata = `
+                <ul>
+                    <li>${element.title}</li>
+                    <li>${element.program}</li>
+                    <li>${element.age}</li>
+                </ul>
+            `;
+        })
+        document.body.innerHTML = htmldata;
+
+    },1000)
+}
+
+function createData(data,callback){
+    setTimeout(()=>{
+        obj.push(data);
+        callback();
+    },2000)
+}
+//In JavaScript, a callback is a function passed into another function as an argument to be executed later. ... When you pass a callback
+// function into another function, you just pass the reference of the function 
+// getdata();
+createData({title:"My name is ishaq khan",age:26,program:"BSSE"},getdata);
+</script>

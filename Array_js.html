@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+
+    let fruits = ["apple","Banana","Mango","Graphes"];
+    // Access an Array item using the index position
+    console.log(fruits[0]);
+    console.log(fruits.length - 3)
+    //loop over an array
+    fruits.forEach((currentElm)=>{
+        console.log(currentElm)
+    })
+    //push and pop function
+
+    // shift and unshift
+
+    // Find the index of an item in the Array
+    let pos = fruits.indexOf('Banana');
+    console.log(pos)
+
+    // remove an item from an array 
+    let removedItem = fruits.splice(pos,1);
+    console.log(fruits);
+
+    //creating copy of an array
+    let copyArr = fruits.slice()
+    console.log(copyArr)
+
+    //indexOf ,lastIndexOf(),includes()
+    //find() function returns only one element but filter() method can return all elements
+    let marks = [200,250,300,500,400,600]
+    let output_using_find = marks.find((element)=>{
+        return element > 200;
+    });
+    console.log(output_using_find);
+
+    let output_using_filter = marks.filter((element)=>{
+        return element >200;
+    });
+    console.log(output_using_filter);
+
+  
+// The map() method is used for creating a new array from an existing one,
+ //applying a function to each one of the elements of the first array.
+// Q:having an array make sqare root of each element then find out values that are 
+// greater than 10 (by chaining method)
+
+let arr = [1,4,9,16,24,32,36]
+let res = arr.map((element)=>{
+    return Math.sqrt(element);
+}).filter((element)=>{
+    return element > 2;
+});
+console.log(res);
+
+let students = [
+    {name:"khalid",grade:"80"},
+    {name:"Aqib",grade:"89"},
+    {name:'salman',grade:"80"}
+];
+let result = students.filter((element)=>{
+    return element.grade > 80;
+});
+console.log(result);
+
+
+</script>

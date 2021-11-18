@@ -1,0 +1,38 @@
+.container{
+    /* border: 1px solid green; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input_div{
+    margin: 50% 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 50%;
+    padding: 30px 30px;
+    border-radius: 20px;
+}
+.input_div h3{
+    font-size: 24px;
+}
+.input_div ul{
+    list-style: none;
+}
+.input_div ul li{
+    text-align: left;
+    padding: .2rem;
+    font-size: 20px;
+}
+.submit{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(109, 182, 192);
+    font-size: 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.submit:hover{
+    background-color: rgb(62, 94, 153);
+}

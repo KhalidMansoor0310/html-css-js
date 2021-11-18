@@ -1,0 +1,45 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.main_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+}
+
+.input_div{
+    margin: 50% 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 50%;
+    padding: 30px 30px;
+    border-radius: 20px;
+    
+}
+.input_div ul{
+    list-style: none;
+}
+h1{
+    margin-bottom: 1rem;
+}
+.input_div ul li{
+    padding: 0.2rem;
+}
+button{
+    margin: 10px 0px;
+    padding: 10px 20px;
+    border: transparent;
+}
+p{
+   
+    margin-left: 91%;
+    margin-top: -40px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}

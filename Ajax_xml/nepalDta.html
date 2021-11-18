@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Nepal Country Data</title>
+  </head>
+  <body>
+      <div class="container" style="width: 600px; height: 500px;">
+
+      </div>
+    
+    
+      <script>
+          let container = document.querySelector('.container');
+          let req = new XMLHttpRequest();
+          req.open('GET','https://restcountries.eu/rest/v2/name/pakistan');
+          req.send();
+          req.addEventListener('load',function get(){
+                const [data] = JSON.parse(this.responseText); //json.parse converts data into objects
+                let htmldata = `
+                <div class="card mt-5">
+                    <div class="card-header text-center bg-dark">
+                        <img src="${data.flag}" alt="" style="height:200px">
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title bg-light">${data.name}</h2>
+                   
+                    <div class="card-footer text-center row col-sm-12 bg-dark text-white">
+                        <div class="col-sm-4">
+                            Capital is : ${data.capital}
+                        </div>
+                        <div class="col-sm-4">
+                            Population is: ${data.population}
+                        </div>
+                        <div class="col-sm-4">
+                            Population is: ${data.demonym}
+                        </div>
+                    </div>
+                </div>
+                </div>`;
+                container.insertAdjacentHTML('afterBegin',htmldata);
+
+
+          })
+      </script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>

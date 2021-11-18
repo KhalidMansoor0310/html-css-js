@@ -1,0 +1,136 @@
+<script>
+
+// name = "  Khalid Mansoor Islamia College Student ";
+// str1 = "Peshawar"
+// // slice(start, end)
+// console.log(name.slice(1,5))
+// // substring(start, end)
+// console.log(name.substring(9,18))
+// // substr(start, length)
+// console.log(name.substr(0,8))
+// // length
+// console.log(name.length)
+// // replace()
+// console.log(name.replace("isp",'Islamia'))
+// // toUpperCase()
+// // toLowerCase()
+// // concat()
+// console.log(name.concat(str1))
+// // trim()
+// console.log(name.trim())
+// // split()
+// console.log(name.split(','))
+// //charCodeAt()
+// //charAt
+
+
+
+
+
+const quizDB = [
+    {
+        question:"Q1:Whats HTML stands For?",
+        a:"HyperTextMarkUp",
+        b:"Hyper Text Mark Up Language",
+        c:"Hyper Text Mark Up",
+        ans:'50'
+    },
+    {
+        question:"Q2:Whats CSS stands For?",
+        a:"Cascadding style sheet",
+        b:"Candle candle smart",
+        c:"Hyper Text Mark Up language",
+        ans:'40'
+    },
+    {
+        question:"Q3:what is python?",
+        a:"Snake",
+        b:"language",
+        c:"Programming language",
+        ans:'30'
+    },
+    {
+        question:"Q4:What is jquery?",
+        a:"library",
+        b:"Language",
+        c:"package language",
+        ans:'20'
+    } 
+];
+
+const key = "language";
+for(let i = 0; i < quizDB.length; i++){
+    switch(quizDB[i].c.indexOf(key)){
+        case -1:
+            console.log("Not found");
+        default:
+            console.log("Found");
+    }
+}
+
+let marks = 0
+for(let i = 0 ; i<quizDB.length; i++)
+{
+    marks = marks + Number(quizDB[i].ans)
+}
+console.log(marks)
+
+
+var data = [
+    {
+        name: "Shahid",
+        age: 21,
+        gpa: 3.2,
+        isStudent: true,
+        marks: [30, 40, 50, 60, 0],
+        subjects: {
+            cpp: 3.2,
+            java: 4.0,
+            python: 2.3,
+        },
+        sentence: "This is sentence 1. And it is a bit longer.",
+        productDetails:"Orange,200,2,2/3/2010,2/1/2010"
+    },
+    {
+        name: "Shuja",
+        age: 24,
+        gpa: 3.3,
+        isStudent: false,
+        marks: [20, 60, 40, 60, 10],
+        subjects: {
+            cpp: 3.3,
+            java: 1.0,
+            python: 3.3,
+        },
+        sentence: "never thought i would write a crazy crazy sentence.",
+        productDetails:"Mango,200,2,2/3/2010,2/1/2010"
+    },
+    {
+        name: "Kamran",
+        age: 24,
+        gpa: 3.5,
+        isStudent: true,
+        marks: [33, 50, 70, 20, 10, 20, 40, 30],
+        subjects: {
+            cpp: 1.2,
+            java: 3.0,
+            python: 4.0,
+        },
+        sentence: "    Lets hail the mentis lords. For the Hollow Nest!",
+        productDetails:"banana,200,2,2/3/2010,2/1/2010"
+    },
+];
+let qty = 0
+for(let student = 0; student<data.length; student++){
+    // split() function 
+    qty = qty+Number(data[student].productDetails.split(',')[1]);
+   
+}
+
+console.log(qty)
+ //trim() function 
+ str = data[2].sentence.trim();
+ console.log(str)
+
+    
+</script>
